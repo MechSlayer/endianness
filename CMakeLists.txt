@@ -1,11 +1,9 @@
 cmake_minimum_required(VERSION 3.4)
-project(endianness C CXX)
+project(endianness C)
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_CXX_STANDARD 11)
 
 option(ENDIANNESS_CHECK_FLOAT_SIZE "Checks that the size of float/double is the same as uint32_t/uint64_t" ON)
 option(ENDIANNESS_DETECT_ON_CONFIGURE "Tries to detect the endianness on configure time" ON)
-set(ENDIANNESS_TARGET "LITTLE" CACHE STRING "The target endianness for target.h conversions")
 
 if (${ENDIANNESS_CHECK_FLOAT_SIZE})
 
@@ -29,12 +27,6 @@ endif ()
 
 add_library(${PROJECT_NAME} INTERFACE)
 target_include_directories(${PROJECT_NAME} INTERFACE src)
-
-if(ENDIANNESS_TARGET STREQUAL "BIG")
-    target_compile_definitions(${PROJECT_NAME} INTERFACE ENDIANNESS_TARGET_BIG)
-elseif(ENDIANNESS_TARGET STREQUAL "LITTLE")
-    target_compile_definitions(${PROJECT_NAME} INTERFACE ENDIANNESS_TARGET_LITTLE)
-endif()
 
 
 if (${ENDIANNESS_DETECT_ON_CONFIGURE})

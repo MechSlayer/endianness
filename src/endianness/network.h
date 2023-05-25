@@ -63,90 +63,294 @@
 #include "detection.h"
 
 #if defined(__LITTLE_ENDIAN__)
-#    define ntoh8(x) bswap8((x))
-#    define hton8(x) bswap8((x))
-#    define letoh8(x) (x)
-#    define htole8(x) (x)
-#    define betoh8(x) bswap8((x))
-#    define htobe8(x) bswap8((x))
+#    ifndef ntoh8
+#        define ntoh8(x) bswap8((x))
+#    endif
 
-#    define ntoh16(x) bswap16((x))
-#    define hton16(x) bswap16((x))
-#    define letoh16(x) (x)
-#    define htole16(x) (x)
-#    define betoh16(x) bswap16((x))
-#    define htobe16(x) bswap16((x))
+#    ifndef hton8
+#        define hton8(x) bswap8((x))
+#    endif
 
-#    define ntoh32(x) bswap32((x))
-#    define hton32(x) bswap32((x))
-#    define letoh32(x) (x)
-#    define htole32(x) (x)
-#    define betoh32(x) bswap32((x))
-#    define htobe32(x) bswap32((x))
+#    ifndef letoh8
+#        define letoh8(x) (x)
+#    endif
 
-#    define ntoh64(x) bswap64((x))
-#    define hton64(x) bswap64((x))
-#    define letoh64(x) (x)
-#    define htole64(x) (x)
-#    define betoh64(x) bswap64((x))
-#    define htobe64(x) bswap64((x))
+#    ifndef htole8
+#        define htole8(x) (x)
+#    endif
 
-#    define ntohf(x) bswapf((x))
-#    define htonf(x) bswapf((x))
-#    define letohf(x) (x)
-#    define htolef(x) (x)
-#    define betohf(x) bswapf((x))
-#    define htobef(x) bswapf((x))
+#    ifndef betoh8
+#        define betoh8(x) bswap8((x))
+#    endif
 
-#    define ntohd(x) bswapd((x))
-#    define htond(x) bswapd((x))
-#    define letohd(x) (x)
-#    define htoled(x) (x)
-#    define betohd(x) bswapd((x))
-#    define htobed(x) bswapd((x))
+#    ifndef htobe8
+#        define htobe8(x) bswap8((x))
+#    endif
+
+#    ifndef ntoh16
+#        define ntoh16(x) bswap16((x))
+#    endif
+
+#    ifndef hton16
+#        define hton16(x) bswap16((x))
+#    endif
+
+#    ifndef letoh16
+#        define letoh16(x) (x)
+#    endif
+
+#    ifndef htole16
+#        define htole16(x) (x)
+#    endif
+
+#    ifndef betoh16
+#        define betoh16(x) bswap16((x))
+#    endif
+
+#    ifndef htobe16
+#        define htobe16(x) bswap16((x))
+#    endif
+
+#    ifndef ntoh32
+#        define ntoh32(x) bswap32((x))
+#    endif
+
+#    ifndef hton32
+#        define hton32(x) bswap32((x))
+#    endif
+
+#    ifndef letoh32
+#        define letoh32(x) (x)
+#    endif
+
+#    ifndef htole32
+#        define htole32(x) (x)
+#    endif
+
+#    ifndef betoh32
+#        define betoh32(x) bswap32((x))
+#    endif
+
+#    ifndef htobe32
+#        define htobe32(x) bswap32((x))
+#    endif
+
+#    ifndef ntoh64
+#        define ntoh64(x) bswap64((x))
+#    endif
+
+#    ifndef hton64
+#        define hton64(x) bswap64((x))
+#    endif
+
+#    ifndef letoh64
+#        define letoh64(x) (x)
+#    endif
+
+#    ifndef htole64
+#        define htole64(x) (x)
+#    endif
+
+#    ifndef betoh64
+#        define betoh64(x) bswap64((x))
+#    endif
+
+#    ifndef htobe64
+#        define htobe64(x) bswap64((x))
+#    endif
+
+#    ifndef ntohf
+#        define ntohf(x) bswapf((x))
+#    endif
+
+#    ifndef htonf
+#        define htonf(x) bswapf((x))
+#    endif
+
+#    ifndef letohf
+#        define letohf(x) (x)
+#    endif
+
+#    ifndef htolef
+#        define htolef(x) (x)
+#    endif
+
+#    ifndef betohf
+#        define betohf(x) bswapf((x))
+#    endif
+
+#    ifndef htobef
+#        define htobef(x) bswapf((x))
+#    endif
+
+#    ifndef ntohd
+#        define ntohd(x) bswapd((x))
+#    endif
+
+#    ifndef htond
+#        define htond(x) bswapd((x))
+#    endif
+
+#    ifndef letohd
+#        define letohd(x) (x)
+#    endif
+
+#    ifndef htoled
+#        define htoled(x) (x)
+#    endif
+
+#    ifndef betohd
+#        define betohd(x) bswapd((x))
+#    endif
+
+#    ifndef htobed
+#        define htobed(x) bswapd((x))
+#    endif
 
 #elif defined(__BIG_ENDIAN__)
-#    define ntoh8(x) (x)
-#    define hton8(x) (x)
-#    define letoh8(x) bswap8((x))
-#    define htole8(x) bswap8((x))
-#    define betoh8(x) (x)
-#    define htobe8(x) (x)
+#    ifndef ntoh8
+#        define ntoh8(x) (x)
+#    endif
 
-#    define ntoh16(x) (x)
-#    define hton16(x) (x)
-#    define letoh16(x) bswap16((x))
-#    define htole16(x) bswap16((x))
-#    define betoh16(x) (x)
-#    define htobe16(x) (x)
+#    ifndef hton8
+#        define hton8(x) (x)
+#    endif
 
-#    define ntoh32(x) (x)
-#    define hton32(x) (x)
-#    define letoh32(x) bswap32((x))
-#    define htole32(x) bswap32((x))
-#    define betoh32(x) (x)
-#    define htobe32(x) (x)
+#    ifndef letoh8
+#        define letoh8(x) bswap8((x))
+#    endif
 
-#    define ntoh64(x) (x)
-#    define hton64(x) (x)
-#    define letoh64(x) bswap64((x))
-#    define htole64(x) bswap64((x))
-#    define betoh64(x) (x)
-#    define htobe64(x) (x)
+#    ifndef htole8
+#        define htole8(x) bswap8((x))
+#    endif
 
-#    define ntohf(x) (x)
-#    define htonf(x) (x)
-#    define letohf(x) bswapf((x))
-#    define htolef(x) bswapf((x))
-#    define betohf(x) (x)
-#    define htobef(x) (x)
+#    ifndef betoh8
+#        define betoh8(x) (x)
+#    endif
 
-#    define ntohd(x) (x)
-#    define htond(x) (x)
-#    define letohd(x) bswapd((x))
-#    define htoled(x) bswapd((x))
-#    define betohd(x) (x)
-#    define htobed(x) (x)
+#    ifndef htobe8
+#        define htobe8(x) (x)
+#    endif
+
+#    ifndef ntoh16
+#        define ntoh16(x) (x)
+#    endif
+
+#    ifndef hton16
+#        define hton16(x) (x)
+#    endif
+
+#    ifndef letoh16
+#        define letoh16(x) bswap16((x))
+#    endif
+
+#    ifndef htole16
+#        define htole16(x) bswap16((x))
+#    endif
+
+#    ifndef betoh16
+#        define betoh16(x) (x)
+#    endif
+
+#    ifndef htobe16
+#        define htobe16(x) (x)
+#    endif
+
+#    ifndef ntoh32
+#        define ntoh32(x) (x)
+#    endif
+
+#    ifndef hton32
+#        define hton32(x) (x)
+#    endif
+
+#    ifndef letoh32
+#        define letoh32(x) bswap32((x))
+#    endif
+
+#    ifndef htole32
+#        define htole32(x) bswap32((x))
+#    endif
+
+#    ifndef betoh32
+#        define betoh32(x) (x)
+#    endif
+
+#    ifndef htobe32
+#        define htobe32(x) (x)
+#    endif
+
+#    ifndef ntoh64
+#        define ntoh64(x) (x)
+#    endif
+
+#    ifndef hton64
+#        define hton64(x) (x)
+#    endif
+
+#    ifndef letoh64
+#        define letoh64(x) bswap64((x))
+#    endif
+
+#    ifndef htole64
+#        define htole64(x) bswap64((x))
+#    endif
+
+#    ifndef betoh64
+#        define betoh64(x) (x)
+#    endif
+
+#    ifndef htobe64
+#        define htobe64(x) (x)
+#    endif
+
+#    ifndef ntohf
+#        define ntohf(x) (x)
+#    endif
+
+#    ifndef htonf
+#        define htonf(x) (x)
+#    endif
+
+#    ifndef letohf
+#        define letohf(x) bswapf((x))
+#    endif
+
+#    ifndef htolef
+#        define htolef(x) bswapf((x))
+#    endif
+
+#    ifndef betohf
+#        define betohf(x) (x)
+#    endif
+
+#    ifndef htobef
+#        define htobef(x) (x)
+#    endif
+
+#    ifndef ntohd
+#        define ntohd(x) (x)
+#    endif
+
+#    ifndef htond
+#        define htond(x) (x)
+#    endif
+
+#    ifndef letohd
+#        define letohd(x) bswapd((x))
+#    endif
+
+#    ifndef htoled
+#        define htoled(x) bswapd((x))
+#    endif
+
+#    ifndef betohd
+#        define betohd(x) (x)
+#    endif
+
+#    ifndef htobed
+#        define htobed(x) (x)
+#    endif
 #endif
 
 #endif // ENDIANNESS_NETWORK_H
